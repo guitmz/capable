@@ -41,10 +41,17 @@ The CLI tool is designed to interact with the Capacities.io API, enabling users 
 
 ##  Getting Started
 
+### Requirements
+
+Capable requires `CAPACITIES_SPACE_ID` and `CAPACITIES_API_TOKEN` environment variables to be defined for authentication. Please refer to the official documentation for more information.
 
 ###  Installation
 
-Download the pre-compiled binary from the releases page or follow the guide below to build the project from source:
+The installation options are the following:
+
+- Download the pre-compiled binary from the releases page
+- Use Homebrew `brew install guitmz/tools/capable`
+- Or follow the guide below to build the project from source:
 
 1. Clone the app repository:
 ```sh
