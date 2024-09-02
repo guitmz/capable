@@ -7,6 +7,7 @@
 <p align="center">
 	<img src="https://img.shields.io/badge/GitHub%20Actions-2088FF.svg?style=default&logo=GitHub-Actions&logoColor=white" alt="GitHub%20Actions">
 	<img src="https://img.shields.io/badge/Go-00ADD8.svg?style=default&logo=Go&logoColor=white" alt="Go">
+	<img src="https://goreportcard.com/badge/github.com/guitmz/capable" alt="Go%20Report%20Card">
 </p>
 <br>
 
