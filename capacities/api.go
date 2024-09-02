@@ -19,12 +19,12 @@ import (
 
 // doRequest sends an HTTP POST request with the provided payload to a specified endpoint.
 // It handles the response, logging any errors, and optionally prints the result in a pretty JSON format if debug is true.
-func doRequest(payload any, endpoint, token string, debug bool) {
+func doRequest(payload interface{}, endpoint, token string, debug bool) {
 	// Initialize spinner for visual indication of progress
 	s := spinner.New(spinner.CharSets[11], 100*time.Millisecond)
 	s.Suffix = " Sending payload...\n"
 	s.FinalMSG = "Complete!\n"
-	s.Start()
+	// s.Start()
 
 	// Marshal payload data to JSON
 	payloadJson, err := json.Marshal(payload)
@@ -36,6 +36,10 @@ func doRequest(payload any, endpoint, token string, debug bool) {
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Add("Authorization", "Bearer "+token)
 
+	// res, err := httputil.DumpRequest(req, true)
+	// utils.CheckError(err)
+	// fmt.Print(string(res))
+
 	// Send HTTP request
 	resp, err := http.DefaultClient.Do(req)
 	utils.CheckError(err)
@@ -46,14 +50,15 @@ func doRequest(payload any, endpoint, token string, debug bool) {
 	}
 
 	// Stop the spinner after completing the request
-	s.Stop()
+	// s.Stop()
 
 	// If debug mode is enabled, process and print the response in a pretty JSON format
 	if debug {
 		defer resp.Body.Close()
 		body, err := io.ReadAll(resp.Body)
 		utils.CheckError(err)
-		var result WeblinkResponse
+		// var result WeblinkResponse
+		var result SearchResponse
 		if err := json.Unmarshal(body, &result); err != nil {
 			log.Println("cannot unmarshal response JSON")
 		}
@@ -83,4 +88,15 @@ func SaveToDailyNote(capacitiesSpaceId, capacitiesToken, userInput, origin strin
 		NoTimeStamp: !noTimeStamp,
 	}
 	doRequest(daily, "/save-to-daily-note", capacitiesToken, debug)
+}
+
+// SearchContent searches for content in spaces by making a request to the "/search" endpoint.
+func SearchContent(capacitiesToken, mode, query string, spaceIds, filters []string, debug bool) {
+	search := Search{
+		Mode:               mode,
+		SearchTerm:         query,
+		SpaceIds:           spaceIds,
+		FilterStructureIds: filters,
+	}
+	doRequest(search, "/search", capacitiesToken, debug)
 }

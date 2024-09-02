@@ -51,6 +51,6 @@ func init() {
 	weblinkCmd.Flags().StringP("title", "t", "", "Title of the weblink. If not specified, it will be fetched from the URL.")
 	weblinkCmd.Flags().StringP("description", "d", "", "Description of the weblink. If not specified, it will be fetched from the URL.")
 	weblinkCmd.Flags().StringP("input", "i", "", "Text formatted as markdown to be added to the notes section.")
-	weblinkCmd.Flags().StringArrayP("tags", "", []string{}, "Tags to add to the weblink. Tags must match existing tag names in Capacities.")
+	weblinkCmd.Flags().StringArrayP("tags", "", []string{}, "Tags to add to the weblink. Tags must match existing tag names in Capacities. Example: \"Tag1,Tag2\"")
 	weblinkCmd.Flags().BoolP("debug", "", false, "Display the return JSON object from Capacities.io API.")
 }

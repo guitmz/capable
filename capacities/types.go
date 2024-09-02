@@ -34,3 +34,27 @@ type WeblinkResponse struct {
 	Description string   `json:"description"`
 	Tags        []string `json:"tags"`
 }
+
+// Search represents a search query.
+type Search struct {
+	Mode               string   `json:"mode"`
+	SearchTerm         string   `json:"searchTerm"`
+	SpaceIds           []string `json:"spaceIds"`
+	FilterStructureIds []string `json:"filterStructureIds"`
+}
+
+// SearchResponse represents a response for a content search.
+type SearchResponse struct {
+	Results []struct {
+		ID          string `json:"id"`
+		SpaceID     string `json:"spaceId"`
+		StructureID string `json:"structureId"`
+		Title       string `json:"title"`
+		Highlights  []struct {
+			Context struct {
+				Field string `json:"field"`
+			} `json:"context"`
+			Snippets []string `json:"snippets"`
+		} `json:"highlights"`
+	} `json:"results"`
+}
