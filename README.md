@@ -48,7 +48,13 @@ Capable requires `CAPACITIES_SPACE_ID` and `CAPACITIES_API_TOKEN` environment va
 
 ###  Installation
 
-The installation options are the following:
+To install the binary run:
+
+```sh
+go install github.com/guitmz/capable@latest
+```
+
+Other installation options are the following:
 
 - Download the pre-compiled binary from the releases page
 - Use Homebrew `brew install guitmz/tools/capable`
