@@ -37,6 +37,7 @@ The CLI tool is designed to interact with the Capacities.io API, enabling users 
 |----|-------------------|---------------------------------------------------------------|
 | 📝 | **Daily Notes**  | Append text to the daily note for the current date. This is useful for journaling or quickly adding thoughts. Supports inputs from the command line or `stdin` with Markdown formatting and automatic timestamping. |
 | 🔗 | **Weblinks**  | Add a weblink to Capacities from your command line. |
+| 🔍 | **Search**  | Search for content in Capacities from your command line. |
 
 ---
 
@@ -89,7 +90,8 @@ To run the project, execute the following command:
 
 - [X] **`Weblinks`**: <strike>Implement sending weblinks.</strike>
 - [X] **`Daily Notes`**: <strike>Implement adding to daily notes.</strike>
-- [ ] **`Search`**: Implement search feature.
+- [X] **`Search`**: Implement search feature.
+- [ ] More features will come based on Capacities API development.
 
 ---
 
