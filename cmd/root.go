@@ -18,8 +18,8 @@ var rootCmd = &cobra.Command{
 	Use:   "capable",
 	Short: "Interact with Capacities.io API",
 	Long: `Capable is CLI tool is designed to interact with the Capacities.io API, 
-enabling users to send daily entries and weblinks to the Capacities platform 
-directly from the command line.`,
+enabling users to search content and send daily entries and weblinks to the Capacities 
+platform directly from the command line.`,
 }
 
 // Execute runs the root command and exits the application if an error occurs
